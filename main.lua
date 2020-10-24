@@ -4,6 +4,7 @@ local GameScore = GameScore or require "gamescore"
 local Menu = Menu or require "menu"
 local GameStateController = GameStateController or require "gamestatecontroller"
 local Data = Data or require "data"
+local tiny = require "tiny"
 
 local w, h -- Variables to store the screen width and height
 
@@ -16,7 +17,7 @@ function love.load(arg)
   if arg[#arg] == "-debug" then require("mobdebug").start() end -- Enable the debugging with ZeroBrane Studio
   
   w, h = love.graphics.getDimensions() -- Get the screen width and height
-
+  
   data = Data()
   pPaddle = Paddle(data.playerPaddleX,data.playerPaddleY, data.paddleSpeed, "Player",data.paddleWidth, data.paddleHeight,data.paddleTexture)
   cpuPaddle = Paddle(data.cpuPaddleX,data.cpuPaddleY, data.paddleSpeed, "CPU", data.paddleWidth, data.paddleHeight,data.paddleTexture)
@@ -108,6 +109,7 @@ function love.draw()
        love.graphics.setFont(font)
        love.graphics.print(data.winner2Text,data.winner2TextX , data.winner2TextY)
      end
+     menu:draw(w,h)
      end
 end
 function love.keypressed(key)
