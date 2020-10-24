@@ -52,6 +52,11 @@ function Data:new()
   self.buttonHeight = 64
   self.margeY = 50 - 50
   self.margeYIncrease = 100
+  self.menuInfo1 = "First to 5"
+  self.menuInfo2 = "First to 10"
+  self.menuInfoX = 100
+  self.menuInfo1Y = 300
+  self.menuInfo2Y = 400
   --Variables relacionades amb les posicions i dimensions del logo
   self.logoX = self.w / 3.4
   self.logoY = self.h / 14

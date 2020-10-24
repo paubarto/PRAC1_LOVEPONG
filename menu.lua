@@ -27,8 +27,8 @@ function Menu:draw(w,h)
      love.graphics.setFont(self.font)
      self.color = data.whiteColor
      love.graphics.setColor(unpack(self.color))
-     love.graphics.print("First to 5",100,300)
-     love.graphics.print("First to 10", 100, 400)
+     love.graphics.print(data.menuInfo1,data.menuInfoX,data.menuInfo1Y)
+     love.graphics.print(data.menuInfo2,data.menuInfoX,data.menuInfo2Y)
      self:drawLogo()
    end
    if(currentGameState.isGameOver == true) then
